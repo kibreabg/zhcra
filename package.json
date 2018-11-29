@@ -1,0 +1,24 @@
+{
+    "name": "zhcra-portal-server",
+    "version": "1.0.0",
+    "description": "Server side app for ZHCRA portal",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "zhcra",
+        "portal",
+        "server"
+    ],
+    "author": "Kibreab",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.4",
+        "express": "^4.16.3",
+        "formidable": "^1.2.1",
+        "jsonwebtoken": "^8.3.0",
+        "mysql2": "^1.5.3",
+        "sequelize": "^4.37.6"
+    }
+}
