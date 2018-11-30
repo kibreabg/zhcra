@@ -6,7 +6,7 @@ module.exports = function(app) {
     app.post('/api/quickaccesstools', quickaccesstools.create);
 
     // Retrieve all QuickAccessTool
-    app.get('/api/quickaccesstools', quickaccesstools.verifyToken, quickaccesstools.findAll);
+    app.get('/zhcra/quickaccesstools', quickaccesstools.verifyToken, quickaccesstools.findAll);
 
     // Retrieve a single quickaccesstool by Id
     app.get('/api/quickaccesstools/:quickaccesstoolId', quickaccesstools.findByPk);
