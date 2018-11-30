@@ -1,17 +1,24 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+const path = require('path');
+const http = require('http');
 const cors = require('cors');
 const database = require('./app/config/db.config.js');
 
 var app = express();
 
+app.use(express.static(__dirname + './dist/ZHCRA-portal-client'));
 app.use(bodyParser.json({ limit: '50mb' }));
 
-const corsOptions = {
-    origin: 'http://localhost:4200',
+/*const corsOptions = {
+    origin: 'http://localhost:4300',
     optionsSuccessStatus: 200
 }
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));*/
+
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/dist/ZHCRA-portal-client/index.html'));
+});
 
 // force: true will drop the table if it already exists
 /*database.sequelize.sync().then(() => {
@@ -24,11 +31,8 @@ require('./app/route/guideline.route.js')(app);
 require('./app/route/artguideline.route.js')(app);
 require('./app/route/memo.route.js')(app);
 
+const server = http.createServer(app);
 // Create a Server
-var server = app.listen(8080, function() {
-
-    let host = server.address().address
-    let port = server.address().port
-
-    console.log("App listening at http://%s:%s", host, port);
+server.listen(process.env.port || 8080, function() {
+    console.log('Server runnning');
 });
