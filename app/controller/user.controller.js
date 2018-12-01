@@ -56,6 +56,7 @@ exports.checkUserExists = (req, res) => {
         where: { username: uname, password: upassword }
     }).then((authUser) => {
         jwt.sign({ authUser }, 'zhcra', (err, token) => {
+            console.log(authUser);
             res.json({
                 token,
                 err

@@ -65,10 +65,11 @@ exports.verifyToken = (req, res, next) => {
         // Get token from array
         const bearerToken = bearer[1];
         // Set the token
-        req.token = bearerToken;
+        // req.token = bearerToken;
         jwt.verify(bearerToken, 'zhcra', (err, authData) => {
             if (err) {
-                console.log('Token Verification ', err);
+                return res.sendStatus(403);
+            } else if (authData.authUser === null) {
                 return res.sendStatus(403);
             } else {
                 console.log('Token Verified');

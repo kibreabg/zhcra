@@ -8,9 +8,9 @@ var app = express();
 
 app.use(express.static('./dist/ZHCRA-portal-client'));
 app.use(bodyParser.json({ limit: '50mb' }));
-
-/*const corsOptions = {
-    origin: 'http://localhost:4300',
+/*
+const corsOptions = {
+    origin: 'http://localhost:4200',
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
@@ -32,6 +32,6 @@ require('./app/route/artguideline.route.js')(app);
 require('./app/route/memo.route.js')(app);
 
 // Create a Server
-app.listen(process.env.port || 8080, function() {
+app.listen(process.env.PORT || 8080, function() {
     console.log('Server runnning');
 });
