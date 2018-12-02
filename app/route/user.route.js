@@ -18,5 +18,5 @@ module.exports = function(app) {
     app.delete('/api/users/:userId', users.delete);
 
     // Check if user exists
-    app.put('/api/login', users.checkUserExists);
+    app.put('/zhcra/login', users.checkUserExists);
 }
