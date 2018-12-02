@@ -3,7 +3,7 @@ const env = {
     username: 'root',
     password: 'admin',
     host: '197.221.225.4',
-    port: '8788'
+    port: '8788',
     dialect: 'mysql',
     pool: {
         max: 5,
