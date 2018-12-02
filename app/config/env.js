@@ -1,8 +1,9 @@
 const env = {
     database: 'zhcra',
     username: 'root',
-    password: '123',
-    host: 'localhost',
+    password: 'admin',
+    host: '197.221.225.4',
+    port: '8788'
     dialect: 'mysql',
     pool: {
         max: 5,
